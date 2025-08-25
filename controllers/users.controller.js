@@ -47,11 +47,11 @@ const login = asyncWrapper(
             return next(appError.create("wrong password" , 400 , httpStatusText.FAIL));
         }
 
-        const token =await generateJWT({ email: user.email, password: user._id, role  : user.role })
+        const token =await generateJWT({ email: user.email, id: user._id, role  : user.role })
         user.token = token ;
           
         await user.save() 
-
+          
         res.status(200).json({status: httpStatusText.SUCCESS , data : user})
     }
 )
