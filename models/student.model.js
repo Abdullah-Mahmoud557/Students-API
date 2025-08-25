@@ -19,7 +19,7 @@ email :{
    required: true,
    unique: true, 
    validate: [validator.isEmail, 'not valid email adress']
-},
+}, 
 },{timestamps : true})
 
 

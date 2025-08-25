@@ -7,13 +7,14 @@ function studentValidation(err, req, res, next) {
             data: err.message
         });
     }
-    //doublicate email 
+    //dublicate email 
     if (err.code === 11000){  
         return res.status(400).json({
             status: httpStatusText.FAIL,
-            data: "this email is already taken"
+            data: "this email is already used"
         });
     }
+
     next(err);
 }
  

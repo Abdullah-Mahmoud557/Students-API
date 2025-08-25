@@ -19,10 +19,11 @@ app.use(express.json() )
 
 
 const studentRoute = require ('./routes/students.route');
- 
+const userRoute = require ('./routes/users.route.js');
 app.use('/api/student',studentRoute) ;
+app.use('/api/user', userRoute);
 
- 
+
 //default error handler
 app.use((error, req, res, next) => {
       return res.status(error.statusCode||500).json({
